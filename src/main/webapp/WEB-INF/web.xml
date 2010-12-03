@@ -1,0 +1,42 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <filter>
+    <filter-name>LogFilter</filter-name>
+    <filter-class>com.intalio.jetty.probelet.LogFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LogFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>AppletFilter</filter-name>
+    <filter-class>com.intalio.jetty.probelet.AppletFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AppletFilter</filter-name>
+    <url-pattern>*.class</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+    <servlet-name>Data</servlet-name>
+    <servlet-class>com.intalio.jetty.probelet.DataServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Data</servlet-name>
+    <url-pattern>/data/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Result</servlet-name>
+    <servlet-class>com.intalio.jetty.probelet.ResultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Result</servlet-name>
+    <url-pattern>/result/*</url-pattern>
+  </servlet-mapping>
+
+</web-app>
